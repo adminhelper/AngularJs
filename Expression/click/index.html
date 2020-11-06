@@ -14,8 +14,6 @@
 
 <body ng-app="todo" ng-controller="TodoCtrl">
 
-    <div class = "container">
-        <h1> 목록 </h1>
         <ul class="list-unstyled">
             <li ng-repeat="todo in todos | filter:statusFilter">
                 <div class="input-group  col-3">
@@ -32,11 +30,6 @@
                 <date>{{todo.createdAt | date : 'yyyy-MM-dd HH:mm:ss'}}</date>
             </li>
         </ul>
-
-        <button class = "btn btn-primary" ng-click = "statusFilter={completed:true}"> Completed </button>
-        <button class = "btn btn-primary" ng-click = "statusFilter={completed:false}"> Active </button>
-        <button class = "btn btn-primary" ng-click = "statusFilter={}"> All </button>
-    </div>
 </body>
 
 </html>

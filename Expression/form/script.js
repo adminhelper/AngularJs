@@ -18,4 +18,21 @@ app.controller("TodoCtrl", function ($scope) {
       createdAt: Date.now(),
     },
   ];
+
+  $scope.remove = function (todo) {
+    // find todo index in todos
+    var idx = $scope.todos.findIndex(function (item) {
+      return item.id === todo.id;
+    });
+
+    // if remove form todos
+    if (idx > -1) {
+      alert("삭제하겠습니까?");
+      $scope.todos.splice(idx, 1);
+    }
+  };
+
+  $scope.add = function (newTodoTitle) {
+    alert(newTodoTitle);
+  };
 });
